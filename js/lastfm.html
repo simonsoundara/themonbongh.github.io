@@ -7,33 +7,17 @@
     <title>last.fm stats</title>
 </head>
 <body>
-    <p>i recently listened to <span id="song"></span> by <span id="artist"></span>.</p>
+    <p>i recently listened to <span id="song">&#8987;</span></p>
 </body>
 <script>
-    $.ajax({
-    type: 'GET',
-    url: 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=monbon7240&api_key=413a31f99043c32f559a67160a095dba&format=json',
-    dataType: 'json',
-    success: function (info) {
-        let nowplaying = null;
-        nowplaying = info.recenttracks.track[0]['@attr'];
-        if (nowplaying === undefined) {
-            console.log("damn")
-        }
-        else {
-            var song = document.getElementById("song");
-            var artist = document.getElementById("artist");
-        }
-        var recentTrack = info.recenttracks.track[0];
-        var formatted = recentTrack.name;
-        $('span#song').html(formatted);
-        var artistFormatted = recentTrack.artist['#text']
-        $('span#artist').html(artistFormatted);
-    },
-    error: function (info) {
-        ('span#song').html('Baby Powder');
-        ('span#artist').html('Jenevieve');
-    }
-})
+    let user = 'monbon7240';
+    let url = 'https://lastfm-last-played.biancarosa.com.br/' + user + '/latest-song';
+    let song = document.querySelector('#song');
+    fetch(url)
+        .then(function (response) {
+            return response.json()
+        }).then(function (json) {
+            song.innerHTML = json['track']['name'] + ' by ' + json['track']['artist']['#text'];
+        });
 </script>
 </html>
