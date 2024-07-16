@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'batik';
+    src: url('fonts/batik-webfont.woff2') format('woff2'),
+         url('fonts/batik-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Banco';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Banco Regular'), url('fonts/Banco Regular.woff') format('woff');
+}
+
+:root {
+    font-family: "batik", sans-serif;
+
+    --mustard: #cccc99;
+    --yellow: #f6db5d;
+    --green: #616a46;
+    --dark-green: #979570;
+    --darker-green: #272f12;
+    --blue: #2b3d67;
+    --purple: #2f2734;
+    --red: #5d1e1c;
+    --black: #090909;
+    --white: #d3d6d5;
+}
+
+h1 {
+    font-family: "Banco";
+}
+a {
+    color: var(--black);
+}
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--mustard);
+    color: var(--black);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+div.header {
+    background-color: var(--yellow);
+    color: var(--red);
+    font-size: 2rem;
+    order: 0;
+}
+div.navbar {
+    order: 1;
+    background-color: var(--green);
+    padding: 1em;
+}
+div.navbar > a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    padding: .5em;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--darker-green);
+    color: var(--mustard);
+}
+
+div.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%
+}
+div.section {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+#socials {
+    background-color: var(--dark-green);
+}
+#socials > div.title {
+    background-color: var(--blue);
+    padding-left: 1em;
+    color: var(--white);
+    font-size: 1.5em;
+}
+#socials > div.links {
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+}
+#last {
+    bottom:0;
+    position: absolute;
+}
+#main {
+}
+#main > p {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#main > div.title {
+    background-color: var(--purple);
+    padding-left: 1em;
+    color: var(--white);
+}
+
+
+@media (min-width: 575.98px) {
+    #socials {
+        flex: 1;
+        padding-bottom: 10em;
+    }
+    #main {
+        flex: 2;
+    }
+    footer {
+        margin-left: 16em;
+
+    }
+}
+
+@media (min-width: 767.98px) {
+    
+}

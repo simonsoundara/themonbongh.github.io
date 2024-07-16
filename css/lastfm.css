@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'batik';
+    src: url('/fonts/batik-webfont.woff2') format('woff2'),
+         url('/fonts/batik-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "batik", sans-serif;
+    background: transparent;
+    display: flex;
+    text-align: left;
+    overflow: hidden;
+    margin:0;
+    font-size: 1.25em;
+    color: #623e4d;
+}

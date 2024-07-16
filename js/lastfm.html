@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>last.fm stats</title>
+    <link href="/css/lastfm.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
-    <p>i recently listened to <span id="song">&#8987;</span></p>
+    <span id="song">i listened to a song by an artist</span>
+</html> 
 </body>
 <script>
     let user = 'monbon7240';
@@ -17,7 +18,7 @@
         .then(function (response) {
             return response.json()
         }).then(function (json) {
-            song.innerHTML = json['track']['name'] + ' by ' + json['track']['artist']['#text'];
+            song.innerHTML = 'i recently listened to ' + json['track']['name'] + ' by ' + json['track']['artist']['#text'];
         });
 </script>
 </html>
